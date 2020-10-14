@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<title>{% block titulo %}DISEÑO WEB{% endblock %}</title>
+	<!-- compliend and minified css-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>
+<body background="https://embed-fastly.wistia.com/deliveries/d666777da0b34facc71d000b4d93613a.webp?image_crop_resized=960x480">
+
+	<!--compiled and minified JavaScript -->
+	<nav>
+		<div class="nav-wrapper #263238 blue-grey darken-4">
+			<a href="{% url 'blong:listar_publicaciones'  %}" class="brand-logo" style="fonst-weight: 43" >DiseñoWeb</a>
+			<a href="#" data-target="menu-chico" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+			<ul id="nav-mobile" class="right hide-on-med-and-down">
+				<li><a href="{% url 'blong:listar_publicaciones'  %}">Programador</a></li>
+				<li><a href="{% url 'blong:listar_publicaciones'  %}">Analista</a></li>
+				<li><a href="{% url 'blong:listar_publicaciones'  %}">Diseñador</a></li>
+				<li><a href="{% url 'blong:listar_publicaciones'  %}">graficas</a></li>
+			</ul>
+		</div>
+	</nav>
+		<div>
+			<a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Listar Diseñadores</a>
+			<ul id='dropdown1' class='dropdown-content'>
+			    <li><a href="#!">one</a></li>
+			    <li><a href="#!">two</a></li>
+			    <li class="divider" tabindex="-1"></li>
+			    <li><a href="#!">three</a></li>
+			    <li><a href="#!"><i class="material-icons">view_module</i>four</a></li>
+			    <li><a href="#!"><i class="material-icons">cloud</i>five</a></li>
+ 			 </ul>
+ 		</div>
+
+	<div class="container" style="padding-bottom:2em; ">
+
+		{% block cuerpo %}
+
+		{% endblock %}
+	</div>
+
+	
+	<div class="parallax-container">
+		<div class="parallax">
+			<img src="https://thesocialmediafamily.com/wp-content/uploads/2018/01/diseno-web-profesional-1200x900.jpg" alt="">	
+		</div>
+	</div>
+		<video class="responsive-video" controls >
+			<source src="https://youtu.be/m7lF65ZBgOM" type="https://youtu.be/m7lF65ZBgOM">
+		</video>
+	</div>
+
+	<footer class="page-footer teal darken-2">
+		<div align="center" style="padding:zem;">
+			<p>Sitio creado por Manuel H</p> 
+			<p align="center"> Graciar por tu visita</p>
+			
+		</div>
+	</footer>
+
+</body>
+	<!--complied and minified javascript -->
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+	<script async src="https://static.addtoany.com/menu/page.js"></script>
+	
+	<script>
+		document.addEventistener('DCFIContinoaeded'.function() {
+				M.mutoInit():
+				});
+	</script>
+</html>

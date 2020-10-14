@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block titulo %}|DISEÑO WEB{% endblock %}
+
+
+{% block cuerpo %}
+	{% if categoria %}
+		<h1>publicaciones en {{ categoria.descripcion }}</h1>
+		{% for new in categoria.publicacion_set.all %}
+			<div >
+				<h2><a href="{% url  'blong:ver_publicacion'  new.id %}">{{ new.titulo }}</a></h2><hr>
+				<p>
+				{{ new.contenido|truncatechars:250 }}<br>
+				{{ new.autor.get_full_name }} publicado: {{ new.f_pub }}
+				</p>
+			</div>
+		{% endfor %}
+		{% for categoria in categoria %}
+		<div class="nav-wrapper #ffffff blanco">
+			<a href="{% url 'app:ver_post_categoria' categoria.id %}">
+				<div class="chip">
+					{{ categoria.descripcion }}
+					<img class="responsive-img" src="cool_pic.jpg">
+				</div>
+			</a>
+		</div>
+		{% endfor %}
+		
+	{% else %}
+
+		{% for new in news %}
+			<div class="nav-wrapper #ffffff blanco">
+				<h2><a href="{% url  'blong:ver_publicacion'  new.id %}">{{ new.titulo }}</a></h2><hr>
+
+				<p>
+					{{ new.contenido|truncatechars:250 }}<br>
+					{{ new.autor.get_full_name }} publicado: {{ new.f_pub }}
+
+					{% for categoria in new.categorias.all %}
+						<div class="nav-wrapper #263238 blue-grey darken-4">
+							<a href="{% url  'blong:ver_publicaciones_categoria'  categoria.id %}">{{categoria.descripcion}}</a>
+						</div>
+					{% endfor %}
+				</p>
+			</div>
+		{% endfor %}
+	{% endif %}
+
+{% endblock %}
+

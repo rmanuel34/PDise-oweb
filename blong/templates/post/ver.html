@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block titulo %} {{ publicacion.titulo|truncatechars:30 }}|DISEÑO WEB{% endblock %}
+
+{% block cuerpo %}
+	<body> 
+	<h1>{{ publicacion.titulo }}</h1>
+	<p align="justify">
+		{{ publicacion.contenido }}
+	</p>
+	{{ publicacion.autor.get_full_name }} publicado: {{ publicacion.f_pub }}
+		<div class="container">
+	        <!-- Page Content goes here -->
+		</div>
+		<div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+			<a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+			<a class="a2a_button_facebook"></a>
+			<a class="a2a_button_twitter"></a>
+			<a class="a2a_button_email"></a>
+			<a class="a2a_button_whatsapp"></a>
+			<a class="a2a_button_pinterest"></a>
+		</div>
+	</body>
+
+{% endblock %}
